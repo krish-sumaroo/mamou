@@ -44,7 +44,15 @@
                       <div class="panel-heading">Planned Visits</div>
                         <div class="panel-body">
                             <div id="list">
-                                List goes here
+                                <ul class="list-group">
+                                  <li class="list-group-item">
+                                    <span class="badge">14.00</span>
+                                    Cras justo odio</li>
+                                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                                  <li class="list-group-item">Morbi leo risus</li>
+                                  <li class="list-group-item">Porta ac consectetur ac</li>
+                                  <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
                             </div>
                             <button type="button" class="btn btn btn-primary btn-sm" id="newVisit">
                                 <span class="glyphicon glyphicon-plus-sign"></span> New Visit
@@ -75,14 +83,30 @@
         var path = '<?php echo base_url(); ?>index.php/';
     $( document ).ready(function() {
         $('#newVisit').click(function () {
-           $('#supplier').modal('show')
+           $('#supplier').modal('show');
         });
+
+        $('#supplier').on('show', function(){
+            $('#flashMsg').hide();
+            $('#frmSupplier')[0].reset();
+        });
+
+        
         
          $('#addSupplier').click(function () {
+          $(this).button('loading');
            var postedValsArr = $('#frmSupplier').serializeArray();
            $.post(path+"supplier/addSupplier", { elements:JSON.stringify(postedValsArr)},
            function( data ) {
-                
+                if(data.status == 1)
+                {
+                  $('#supplier').modal('hide');
+                }
+                else
+                {
+                  $('#flashMsg').html(data.message);
+                  $('#flashMsg').fadeIn();
+                }
               });
            
            

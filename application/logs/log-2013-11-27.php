@@ -323,3 +323,36 @@ DEBUG - 2013-11-27 11:52:46 --> Model Class Initialized
 DEBUG - 2013-11-27 11:52:46 --> Model Class Initialized
 DEBUG - 2013-11-27 11:52:46 --> Final output sent to browser
 DEBUG - 2013-11-27 11:52:46 --> Total execution time: 0.2381
+DEBUG - 2013-11-27 14:01:44 --> Config Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> Hooks Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> Utf8 Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> UTF-8 Support Enabled
+DEBUG - 2013-11-27 14:01:44 --> URI Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> Router Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> No URI present. Default controller set.
+DEBUG - 2013-11-27 14:01:44 --> Output Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> Security Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> Input Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-27 14:01:44 --> Language Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> Loader Class Initialized
+DEBUG - 2013-11-27 14:01:44 --> Config file loaded: application/config/mamouConfig.php
+DEBUG - 2013-11-27 14:01:45 --> Helper loaded: url_helper
+DEBUG - 2013-11-27 14:01:45 --> Database Driver Class Initialized
+DEBUG - 2013-11-27 14:01:46 --> Controller Class Initialized
+DEBUG - 2013-11-27 14:01:46 --> File loaded: application/views/dialogs/supplier.php
+DEBUG - 2013-11-27 14:01:46 --> File loaded: application/views/dialogs/visit.php
+ERROR - 2013-11-27 14:01:46 --> daysArray
+(
+    [0] => Monday
+    [1] => Tuesday
+    [2] => Wednesday
+    [3] => Thursday
+    [4] => Friday
+    [5] => Saturday
+    [6] => Sunday
+)
+
+DEBUG - 2013-11-27 14:01:46 --> File loaded: application/views/landing.php
+DEBUG - 2013-11-27 14:01:46 --> Final output sent to browser
+DEBUG - 2013-11-27 14:01:46 --> Total execution time: 1.6788

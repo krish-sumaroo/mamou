@@ -19,6 +19,21 @@ class Supplier extends CI_Controller {
             $saveArr[$posts->name] = $posts->value;
         }
         
-        $this->supplier->saveSupplier($saveArr);
+        $id = $this->supplier->saveSupplier($saveArr);
+
+        $response = array();
+
+        if($id)
+        {
+            $response['status'] = 1;
+            $response['id'] = $id;
+        }
+        else
+        {
+            $response['status'] = 0;
+            $response['message'] = 'Problem creating supplier. Please try again';
+        }
+
+        echo json_encode($response);
     }
 }

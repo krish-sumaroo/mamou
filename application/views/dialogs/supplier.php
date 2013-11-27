@@ -6,6 +6,7 @@
         <h4 class="modal-title">New Supplier</h4>
       </div>
       <div class="modal-body">
+        <div class="alert" style="text-align: center" id="flashMsg"></div>
         <form class="form-horizontal" role="form" id="frmSupplier" name="frmSupplier">
             <div class="form-group">
               <label for="name" class="col-sm-2 control-label">Name</label>
@@ -104,7 +105,7 @@
        
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="addSupplier">Add Supplier</button>
+        <button type="button" class="btn btn-primary" id="addSupplier" data-loading-text="Saving ...">Add Supplier</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
