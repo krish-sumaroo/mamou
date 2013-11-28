@@ -11,9 +11,15 @@ class Main extends CI_Controller {
 	public function index()
 	{
             $supData['days'] = $this->calendar;
+            
+            // get suppliers for today
+            $today = array_search(date('l'), $this->calendar);
+            $supData['today'] = $today;
+
+            $this->load->model('supplier_model','supplier');
+            $data['suppliers'] = $this->supplier->getSupplierForDate($today);
             $data['newSupplierView'] = $this->load->view('dialogs/supplier',$supData, true);
             $data['newVisitView'] = $this->load->view('dialogs/visit','', true);
-            log_message('error', 'days'.print_r($this->calendar, true));
             
             $this->load->view('landing',$data);
 	}

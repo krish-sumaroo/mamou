@@ -44,14 +44,15 @@
                       <div class="panel-heading">Planned Visits</div>
                         <div class="panel-body">
                             <div id="list">
-                                <ul class="list-group">
+                                <ul class="list-group" id="lstSupplier">
                                   <li class="list-group-item">
                                     <span class="badge">14.00</span>
-                                    Cras justo odio</li>
-                                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                                  <li class="list-group-item">Morbi leo risus</li>
-                                  <li class="list-group-item">Porta ac consectetur ac</li>
-                                  <li class="list-group-item">Vestibulum at eros</li>
+                                    Test</li>
+                                  <?php if($suppliers): ?>
+                                    <?php foreach ($suppliers as $supplier) : ?>
+                                    <li class="list-group-item" data-id="<?php echo $supplier['id'] ?>"><?php echo $supplier['name'] ?></li>
+                                    <?php endforeach; ?>
+                                  <?php endif; ?>
                                 </ul>
                             </div>
                             <button type="button" class="btn btn btn-primary btn-sm" id="newVisit">
@@ -81,14 +82,16 @@
     
     <script>
         var path = '<?php echo base_url(); ?>index.php/';
+
     $( document ).ready(function() {
         $('#newVisit').click(function () {
            $('#supplier').modal('show');
         });
 
-        $('#supplier').on('show', function(){
+        $('#supplier').on('show.bs.modal', function(){
             $('#flashMsg').hide();
             $('#frmSupplier')[0].reset();
+            $('#addSupplier').button('reset');
         });
 
         
@@ -96,18 +99,26 @@
          $('#addSupplier').click(function () {
           $(this).button('loading');
            var postedValsArr = $('#frmSupplier').serializeArray();
+           var today = $('#dayVisit').data("day");
+           var daySelected = $('#dayVisit').val();
+           var name = $('#name').val();
            $.post(path+"supplier/addSupplier", { elements:JSON.stringify(postedValsArr)},
            function( data ) {
                 if(data.status == 1)
                 {
                   $('#supplier').modal('hide');
+                  if(today == daySelected)
+                  {
+                      addToList(data.id, name);
+                      console.log('adding');
+                  }
                 }
                 else
                 {
                   $('#flashMsg').html(data.message);
                   $('#flashMsg').fadeIn();
                 }
-              });
+              },'json');
            
            
         });
@@ -115,7 +126,12 @@
 
         
 });
-    
+ 
+ function addToList(id, name)
+ {
+     var html = '<li class="list-group-item" data-id="'+id+'">'+name+'</li>';
+     $('#lstSupplier').append(html);
+ }
     
     
     </script>

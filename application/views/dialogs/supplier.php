@@ -17,11 +17,11 @@
             <div class="form-group">
               <label for="dayVisit" class="col-sm-2 control-label">Visit Day</label>
               <div class="col-sm-10">
-                  <select id="dayVisit" name="dayVisit" class="form-control">
+                  <select id="dayVisit" name="dayVisit" class="form-control" data-day="<?php echo $today ?>">
                      <?php foreach ($days as $key => $value) : ?>
-                      <option value="<?php echo $key ?>"><?php echo $value ?></option>
+                      <?php $selected = ($key == $today) ? "selected='selected'" : '' ?>
+                      <option value="<?php echo $key ?>" <?php echo $selected ?>><?php echo $value ?></option>
                       <?php endforeach; ?>
-                   
                   </select>
               </div>
             </div>            
