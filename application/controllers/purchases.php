@@ -20,7 +20,8 @@ public function index($id=null)
 
 public function test()
 {
-	$this->load->view('purchases','');
+	$page = $this->load->view('products/products','', true);
+	$this->renderer->renderPage($page);	
 }
 
 

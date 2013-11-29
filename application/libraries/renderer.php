@@ -7,8 +7,9 @@ class Renderer
 		$this->CI =& get_instance();
 	}
 
-	public function render($view)
+	public function renderPage($view)
 	{
+		log_message('error', 'here');
 		$tmp['topBar'] = $this->CI->load->view('main/topBar',null,true);
 		$tmp['body'] = $view;
 
