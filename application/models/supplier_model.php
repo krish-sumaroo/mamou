@@ -17,6 +17,7 @@ class Supplier_model extends CI_Model {
             return false;
         }
     }
+
     
     public function getSupplierForDate($date)
     {

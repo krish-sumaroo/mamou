@@ -21,6 +21,9 @@ class Main extends CI_Controller {
             $data['newSupplierView'] = $this->load->view('dialogs/supplier',$supData, true);
             $data['newVisitView'] = $this->load->view('dialogs/visit','', true);
             
-            $this->load->view('landing',$data);
+
+            $data['styles'] = array('visit');
+            $data['scripts'] = array('visit');
+            $this->load->view('visit',$data);
 	}
 }
