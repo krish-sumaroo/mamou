@@ -50,7 +50,7 @@
                                     Test</li>
                                   <?php if($suppliers): ?>
                                     <?php foreach ($suppliers as $supplier) : ?>
-                                    <li class="list-group-item" data-id="<?php echo $supplier['id'] ?>"><?php echo $supplier['name'] ?></li>
+                                    <li class="list-group-item itemSupplier" data-id="<?php echo $supplier['id'] ?>"><?php echo $supplier['name'] ?></li>
                                     <?php endforeach; ?>
                                   <?php endif; ?>
                                 </ul>
@@ -119,11 +119,12 @@
                   $('#flashMsg').fadeIn();
                 }
               },'json');
-           
-           
         });
         
+     $('#lstSupplier').on("click", ".itemSupplier", function(){
+     
 
+     });    
         
 });
  
