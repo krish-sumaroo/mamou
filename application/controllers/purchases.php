@@ -20,7 +20,10 @@ public function index($id=null)
 
 public function test()
 {
-	$page = $this->load->view('products/products','', true);
+	
+	$page['scripts'] = array('typeahead','search');
+	$page['styles'] = array('typeahead');
+	$page['view'] = $this->load->view('products/products','', true);
 	$this->renderer->renderPage($page);	
 }
 
