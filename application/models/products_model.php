@@ -4,7 +4,14 @@ class Products_model extends CI_Model {
 
 	public function getProductsForSupplier($supplier)
   {
-       $query = $this->db->get_where('products', array('supplier_id' => $supplier));
+
+       $this->db->select('p.name as name, p.model as model, p.size as size, p.id as id');
+       $this->db->from('product p');
+       $this->db->join('product_supplier ps', 'ps.product_id = p.id');
+       $this->db->where('ps.supplier_id', $supplier);
+       $query = $this->db->get();
+
+       log_message('error', 'query =>'.$this->db->last_query());
 
        if ($query->num_rows() > 0)
         {
@@ -15,8 +22,7 @@ class Products_model extends CI_Model {
                  'id' => $row->id,  
                  'name' => $row->name,
                  'model' => $row->model,
-                 'size' => $row->size,
-                 'notes' => $row->notes
+                 'size' => $row->size
              );
            }
            return $result;

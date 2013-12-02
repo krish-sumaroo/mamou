@@ -1,6 +1,7 @@
 <div class="col-md-7 col-md-offset-1 list">
 	 <input type="text" class="form-control" name="query" id="query" placeholder="Start typing something to search..."> 
   <div class="panel panel-info">
+  	<!--
       <div class="panel-heading">List</div>
         <div class="panel-body">
         	<div id="list">
@@ -11,6 +12,11 @@
         	</div>	
         </div>
       </div>
+  -->
   </div>
-</div>         
-        
+</div>
+
+<script>
+var searchSource = <?php echo $searchTxt ?>;
+</script>         
+
