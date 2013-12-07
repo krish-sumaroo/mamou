@@ -23,16 +23,8 @@ public function test()
 	$supplierId = '1';  //test
 
 	$this->load->model('products_model','products');
-	$prodList = $this->products->getProductsForSupplier($supplierId);
-
-
-	log_message('error', 'prod list =>'.print_r($prodList, true));
-	$data['searchTxt'] = json_encode($this->_buildSearch($prodList));
-        
-        $page['view'] = $this->load->view('products/products',$data, true);
-	$page['scripts'] = array('typeahead','search');
-	$page['styles'] = array('typeahead');
-	
+	$data['prodList'] = $this->products->getProductsForSupplier($supplierId);
+	$page['view'] = $this->load->view('products/products',$data, true);
 	$this->renderer->renderPage($page);	
 }
 
