@@ -27,10 +27,12 @@ public function test()
 
 
 	log_message('error', 'prod list =>'.print_r($prodList, true));
-	$page['searchTxt'] = json_encode($this->_buildSearch($prodList));
+	$data['searchTxt'] = json_encode($this->_buildSearch($prodList));
+        
+        $page['view'] = $this->load->view('products/products',$data, true);
 	$page['scripts'] = array('typeahead','search');
 	$page['styles'] = array('typeahead');
-	$page['view'] = $this->load->view('products/products','', true);
+	
 	$this->renderer->renderPage($page);	
 }
 
@@ -43,6 +45,7 @@ private function _buildSearch($data)
                                        'searchTxt' => $searchTxt);
 	}
 
+        log_message('error', 'log  =>' . print_r($searchArray, true));
 	return $searchArray;
 }
 

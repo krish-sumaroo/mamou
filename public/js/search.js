@@ -1,5 +1,6 @@
 $( document ).ready(function() {
-	$('#query').typeahead({
+    console.log(searchSource);
+    $('#searchTxt').typeahead({
     source: function (query, process) {
         usersSch = [];
         map = {};
@@ -33,7 +34,7 @@ $( document ).ready(function() {
 });
 
 
-$('#query').click(function(){
+$('#searchTxt').click(function(){
     $(this).select();
 });
 

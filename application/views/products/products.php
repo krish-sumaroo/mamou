@@ -1,5 +1,5 @@
 <div class="col-md-7 col-md-offset-1 list">
-	 <input type="text" class="form-control" name="query" id="query" placeholder="Start typing something to search..."> 
+	 <input type="text" class="form-control" name="searchTxt" id="searchTxt" placeholder="Start typing something to search..."> 
   <div class="panel panel-info">
   	<!--
       <div class="panel-heading">List</div>
