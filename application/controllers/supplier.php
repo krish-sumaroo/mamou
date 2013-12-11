@@ -2,13 +2,6 @@
 
 class Supplier extends CI_Controller {
     
-    
-    public function test()
-    {
-        echo "fuck you";
-    }
-    
-    
     public function addSupplier()
     {
         $this->load->model('supplier_model','supplier');

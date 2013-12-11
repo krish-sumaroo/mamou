@@ -1,17 +1,27 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Purchases extends CI_Controller {
-
-
-public function index($id=null)
+    
+function  __construct()
 {
-	if(!isset($id))
-	{
-		echo "redirect";
-	}
+    parent::__construct();
+   
+}
 
-	//get products for this supplier
+public function index()
+{
+    $supplierId = '1';  //test
 
+    $this->load->model('products_model','products');
+    $prod['prodList'] = $this->products->getProductsForSupplier($supplierId);
+    
+    $data['productListView'] = $this->load->view('products/products',$prod, true);
+    
+    $data['transactionView'] = $this->load->view('transaction/index',null, true);
+    
+    $page['styles'] = array('purchases');
+    $page['view'] = $this->load->view('purchases/index',$data, true);
+    $this->renderer->renderPage($page);	
 
 
 

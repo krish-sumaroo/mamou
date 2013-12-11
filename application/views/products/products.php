@@ -1,9 +1,7 @@
-<div class="row" id="parent">
-<div class="col-md-3 list productPanel">	 
-  <div class="panel panel-info">
+<div class="panel panel-info">
       <div class="panel-heading">List</div>
         <div class="panel-body">
-        	<div id="list">
+        	<div id="prodList">
            <?php foreach ($prodList as $prod) : ?>
         		<a href="#" class="list-group-item prodItems" data-id="<?php echo $prod['id']?>">
               <h4 class="list-group-item-heading"><?php echo $prod['name'] ?></h4>
@@ -12,16 +10,5 @@
             <?php endforeach ?>
         	</div>	
         </div>
-      </div>
-  </div>
 </div>
 
-<div class="col-md-9 transacPanel">
-  <!-- transac here -->
-  <!-- table or list hmmmmm --> 
-  <ul>
-  </ul>  
-</div> 
-
-</div>
- 
