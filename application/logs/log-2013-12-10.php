@@ -145,3 +145,32 @@ DEBUG - 2013-12-10 23:16:55 --> File loaded: application/views/main/topBar.php
 DEBUG - 2013-12-10 23:16:55 --> File loaded: application/views/main.php
 DEBUG - 2013-12-10 23:16:55 --> Final output sent to browser
 DEBUG - 2013-12-10 23:16:55 --> Total execution time: 0.0790
+DEBUG - 2013-12-10 23:23:02 --> Config Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Hooks Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Utf8 Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> UTF-8 Support Enabled
+DEBUG - 2013-12-10 23:23:02 --> URI Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Router Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Output Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Security Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Input Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-12-10 23:23:02 --> Language Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Loader Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Config file loaded: application/config/mamouConfig.php
+DEBUG - 2013-12-10 23:23:02 --> Helper loaded: url_helper
+DEBUG - 2013-12-10 23:23:02 --> Database Driver Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Controller Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Model Class Initialized
+DEBUG - 2013-12-10 23:23:02 --> Model Class Initialized
+ERROR - 2013-12-10 23:23:02 --> query =>SELECT `p`.`name` as name, `p`.`model` as model, `p`.`size` as size, `p`.`id` as id
+FROM (`product` p)
+JOIN `product_supplier` ps ON `ps`.`product_id` = `p`.`id`
+WHERE `ps`.`supplier_id` =  '1'
+DEBUG - 2013-12-10 23:23:02 --> File loaded: application/views/products/products.php
+DEBUG - 2013-12-10 23:23:02 --> File loaded: application/views/transaction/index.php
+DEBUG - 2013-12-10 23:23:02 --> File loaded: application/views/purchases/index.php
+DEBUG - 2013-12-10 23:23:02 --> File loaded: application/views/main/topBar.php
+DEBUG - 2013-12-10 23:23:02 --> File loaded: application/views/main.php
+DEBUG - 2013-12-10 23:23:02 --> Final output sent to browser
+DEBUG - 2013-12-10 23:23:02 --> Total execution time: 0.2680
