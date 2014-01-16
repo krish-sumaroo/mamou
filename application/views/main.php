@@ -13,6 +13,7 @@
 
     <script src="<?php echo base_url('public/js/jquery.js') ?>"></script>
     <script src="<?php echo base_url('public/bootstrap/js/bootstrap.min.js') ?>"></script>
+    <script src="<?php echo base_url('public/js/utils') ?>"></script>
 
 	<?php if(isset($scripts)) : ?>
 	<?php      foreach($scripts as $script): ?>

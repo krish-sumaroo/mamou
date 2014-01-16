@@ -20,6 +20,7 @@ public function index()
     $data['transactionView'] = $this->load->view('transaction/index',null, true);
     
     $page['styles'] = array('purchases');
+    $page['scripts'] = array('transacModel','transac');
     $page['view'] = $this->load->view('purchases/index',$data, true);
     $this->renderer->renderPage($page);	
 
