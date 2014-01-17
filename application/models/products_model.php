@@ -2,9 +2,8 @@
 
 class Products_model extends CI_Model {
 
-	public function getProductsForSupplier($supplier)
-  {
-
+    public function getProductsForSupplier($supplier)
+    {
        $this->db->select('p.name as name, p.model as model, p.size as size, p.id as id');
        $this->db->from('product p');
        $this->db->join('product_supplier ps', 'ps.product_id = p.id');
@@ -31,7 +30,36 @@ class Products_model extends CI_Model {
         {
             return false;
         }
+    }
+    
+    public function addProduct($product)
+    {
 
-  }
+        $this->db->insert('product', $product); 
+
+        if($this->db->affected_rows())
+        {
+            $id = $this->db->insert_id();
+            return $id;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public function addProductToSupplier($productAr)
+    {
+        $this->db->insert('product_supplier', $productAr);
+        if($this->db->affected_rows())
+        {
+            $id = $this->db->insert_id();
+            return $id;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }

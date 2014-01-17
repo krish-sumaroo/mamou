@@ -22,7 +22,7 @@
 	<?php endif; ?>
 
 	<script>
-    	var CI = {'base_url': '<?php echo base_url(); ?>'};
+    	var mam = {'path': '<?php echo base_url(); ?>index.php/'};
 	</script>
   </head>
   

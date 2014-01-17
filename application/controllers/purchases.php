@@ -11,6 +11,7 @@ function  __construct()
 public function index()
 {
     $supplierId = '1';  //test
+    $this->session->set_userdata('supplier',1);
 
     $this->load->model('products_model','products');
     $prod['prodList'] = $this->products->getProductsForSupplier($supplierId);
@@ -18,6 +19,7 @@ public function index()
     $data['productListView'] = $this->load->view('products/products',$prod, true);
     
     $data['transactionView'] = $this->load->view('transaction/index',null, true);
+    $data['newProductView'] = $this->load->view('dialogs/product',null,true);
     
     $page['styles'] = array('purchases');
     $page['scripts'] = array('transacModel','transac');

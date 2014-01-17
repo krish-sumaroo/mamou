@@ -1,5 +1,7 @@
 <div class="panel panel-info">
-      <div class="panel-heading">List</div>
+    <div class="panel-heading">Products
+        <button type="button" class="btn btn-primary btn-xs pull-right" id="newProd"><span class="glyphicon glyphicon-plus-sign"></span></button>
+    </div>
         <div class="panel-body">
         	<div id="prodList">
                     <?php foreach ($prodList as $prod) : ?>

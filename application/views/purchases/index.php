@@ -6,3 +6,5 @@
         <?php echo $transactionView ?>
     </div>
 </div>
+
+<?php echo $newProductView; ?>
