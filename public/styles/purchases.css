@@ -3,3 +3,8 @@
   height:1000px;  
 }
 
+.inpTotal, .inpQty{
+    text-align: right;
+    width: 100px;
+}
+
