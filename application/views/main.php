@@ -25,14 +25,14 @@
     	var mam = {'path': '<?php echo base_url(); ?>index.php/'};
 	</script>
   </head>
-  
+
   <body>
   	<div class="main">
-  		<?php echo $topBar; ?>
-  		
+  		<?php //echo $topBar; ?>
+
   		<div class="row">
   			<?php echo $view; ?>
-  		</div>	
-  	</div>	
+  		</div>
+  	</div>
   </body>
-</html>    
+</html>
